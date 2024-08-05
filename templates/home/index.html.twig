@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+    {% include "components/contacts/contacts.html.twig" %}
+    <div class="hero p-3">
+        {% include "components/navbar/navbar.html.twig" %}
+        {% include "components/hero/hero.html.twig" %}
+        {% include "components/hero/grid.html.twig" %}
+    </div>
+    <div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="40px 0px" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+        {% include "components/about/about.html.twig" %}
+        {% include "components/servicesOffered/services.html.twig" %}
+        {% include "components/contacts/contForm.html.twig" %}
+    </div>
+        {% include "components/footer/footer.html.twig" %}
+   
+
+<script src="https://kit.fontawesome.com/f48e46a5a4.js" crossorigin="anonymous"></script>
+<script>
+    $('#navbar').scrollspy({
+      offset: 30
+    });
+    const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+  target: '#navbar'
+})
+</script>
+{% endblock %}
